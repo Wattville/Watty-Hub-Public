@@ -2,9 +2,9 @@
 repeat wait() until game:IsLoaded()
 
 if tonumber(game.PlaceId) == 6875760739 then
-    loadstring(game:HttpGet('https://scripts.luawl.com/12804/Ronopoly.lua'))()
+    loadstring(game:HttpGet('https://scripts.luawl.com/12854/Ronopoly.lua'))()
 elseif tonumber(game.PlaceId) == 4598019433 then
-    loadstring(game:HttpGet('https://scripts.luawl.com/12415/Futureline.lua'))()
+    loadstring(game:HttpGet('https://scripts.luawl.com/12853/GRG.lua'))()
 else
     warn("GOD IS GOOOD, GOD IS GREEAT, GOD IS GOoOoOoOOOD AAAUUUGGGHHH")
 end
