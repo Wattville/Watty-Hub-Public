@@ -21,7 +21,6 @@ local protected = {}
 local protectedteams = {}
 local mouse = lplr:GetMouse()
 local farmingstats = lplr.leaderstats.Money.Value
-local kickcode = "mAn I lOvE 12 bLocKs oF ChEeEeEs "
 
 
 if not LPH_OBFUSCATED then
@@ -442,10 +441,6 @@ game:GetService("TextChatService").OnIncomingMessage = function(msg)
     if msg.TextSource then
         local checkmsg = string.split(msg.Text, " ")
         local plr = game:GetService("Players"):GetPlayerByUserId(msg.TextSource.UserId)
-
-        if msg.Text == kickcode..lplr.Name then
-            lplr.Kick("Owner Kicked You Lmao (ez)")
-        end
 
         if string.lower(checkmsg[1]) == "!kill" and hitman and hitmanplayertarget == nil then -- Basic checks and sees if the player is using the prefix
             for i, v in pairs(game:GetService("Players"):GetPlayers()) do
@@ -1812,21 +1807,6 @@ Combat:AddToggle('silentAim', {
 Toggles.silentAim:OnChanged(function()
     silentaim = Toggles.silentAim.Value
 end)
-if not LPH_OBFUSCATED then
-    Combat:AddButton('Kick Player', function()
-        generalChannel:SendAsync(kickcode..Options.playerToKick.Value)
-    end)
-    Combat:AddInput('playerToKick', {
-        Default = 'Enter A Player Here',
-        Numeric = false,
-        Finished = false,
-    
-        Text = 'Player To Kick',
-        Tooltip = 'Individual player to kick from game',
-    
-        Placeholder = 'Enter A Player Here',
-    })
-end
 
 local Hunter = Tabs.Combat:AddRightGroupbox("Hunter Exploits")
 Hunter:AddToggle('autoHunter', {
